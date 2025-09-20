@@ -50,4 +50,19 @@ public class Array {
         }
         count--;
      }
+
+     int[] merge(int[] other){
+       int[] largeArray=new int[items.length+other.length];
+        int index =0;
+        for(int i=0;i<items.length;i++){
+        largeArray[index]=items[i];
+        index++;
+     }
+          for(int i=0;i<other.length;i++){
+            largeArray[index]=other[i];
+            index++;
+     }
+
+           return largeArray;
+}
 }
