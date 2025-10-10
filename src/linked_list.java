@@ -11,7 +11,6 @@
 
 public class linked_list {
     Node head;
-
   void Append(int item){
     Node newNode =new Node(item);
     if(head ==null){
@@ -30,7 +29,7 @@ public class linked_list {
   void Travese(){
     Node currentNode=head;
     while (currentNode!=null) {
-        System.out.print(currentNode.data+">");
+        System.out.println(currentNode.data+">");
         currentNode=currentNode.next;
     }
   }
@@ -55,4 +54,47 @@ public class linked_list {
     newNode.next=currentNode.next;
     currentNode.next=newNode;
   }
+
+  void delete(int item){
+    if(head==null)return;
+    if(head.data==item){
+      head=head.next;
+      return;
+    }
+    Node currNode=head;
+    while (currNode.next!=null) {
+      if(currNode.next.data==item){
+        currNode.next=currNode.next.next;
+        return;
+      }
+      currNode=currNode.next;
+    }
+  }
+
+  void merge(linked_list list2){
+if(head==null){
+  head=list2.head;
+}
+Node currNode=head;
+while (currNode.next!=null) {
+  currNode=currNode.next;
+}
+
+currNode.next=list2.head;
+  }
+
+void deletedublicat(){
+     Node currNode=head;
+     while (currNode!=null&&currNode.next!=null) {{
+      if(currNode.data==currNode.next.data){
+        currNode.next=currNode.next.next;
+      }else{
+        currNode=currNode.next;
+      }
+     }
+      
+     }
+
+}
+
 }
