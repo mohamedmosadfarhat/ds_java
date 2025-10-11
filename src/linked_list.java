@@ -96,5 +96,25 @@ void deletedublicat(){
      }
 
 }
-
+void findMiddle(){
+  Node slow=head;
+  Node fast=head;
+  while (fast!=null&&fast.next!=null) {
+    slow=slow.next;
+    fast=fast.next.next;
+  }
+  System.err.println("the middle "+slow.data);
+}
+void reverse(){
+  Node currNode=head;
+  Node next=null;
+  Node prev=null;
+  while (currNode!=null) {
+    next=currNode.next;
+    currNode.next=prev;
+    prev=currNode;
+    currNode=next;
+  }
+  head=prev;
+}
 }
