@@ -66,6 +66,16 @@ Person searchByTelephone(Person node, int telephone) {
         return searchByTelephone(node.right, telephone);
     return node;
 }
+boolean searchByName(Person root, String name) {
+    if (root == null)
+        return false;
+
+    if (root.getName().equals(name))
+        return true;
+
+    // دور في اليسار واليمين
+    return searchByName(root.left, name) || searchByName(root.right, name);
+}
 //
 boolean updateName(Person node, int telephone, String newName) {
         if (node == null) return false;
