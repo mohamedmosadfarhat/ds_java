@@ -1,14 +1,13 @@
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+      PriorityQueue pq=new PriorityQueue(5);
+      pq.enQueue(4);
+      pq.enQueue(3);
+      pq.enQueue(2);
+      pq.enQueue(5);
 
-        BST tree=new BST();
-        tree.insert( 5);
-        tree.insert( 2);
-        tree.insert( 6);
-        tree.insert( 7);
-        tree.insert( 1);
-       System.err.println(tree.search(5));
-       tree.delete(tree.root, 6);
-       tree.preOrder(tree.root);
+pq.deQueue();
+    //  System.out.println(pq.deQueue());
+     pq.display();
     }
 }
