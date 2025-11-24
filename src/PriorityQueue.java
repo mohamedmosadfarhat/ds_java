@@ -9,7 +9,7 @@ priQ=new int[size];
 nItems=0;
   }
   public void enQueue(int item){
-    if(nItems==size) 
+    if(isFull()) 
     {
         System.out.println("PQ is full");
         return;
@@ -40,8 +40,17 @@ nItems=0;
     return priQ[--nItems];
   }
 
+//   public void deQueue(){
+//     if(nItems==0){
+//         System.out.println("priQ is empty");
+       
+//     }
+//     nItems--;
+//   }
+
+
 public void display(){
-    if(nItems==0){
+    if(isEmpty()){
         System.out.println("pq is empty");
         return;
     }
@@ -51,4 +60,13 @@ public void display(){
     System.err.println();
 }
 
+public boolean isEmpty(){
+    return nItems==0;
+}
+public boolean isFull(){
+    return nItems==size;
+}
+public int peek(){
+    return priQ[nItems-1];
+}
 }
